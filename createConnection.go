@@ -15,7 +15,7 @@ var (
 )
 
 // GetPostgresDB initializes or returns the existing DB connection
-func GetPostgresDB() (*sql.DB, error) {
+func CreateConnection() (*sql.DB, error) {
 	once.Do(func() {
 		// Load config
 		reader, err := class.NewJSONReader("./connection.json")
